@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0 auto;
+            padding:0;
+        }
+        .container{
+            width:380px;
+            height:200px;
+            border:1px solid black;
+            margin-top: 100px;
+            position:relative;
+            overflow:hidden;
+        }
+.div1{
+    
+    position: absolute;
+}
+
+        .div1 li{
+            width:60px;
+            height:60px;
+            background-color: lightpink;
+            list-style:none;
+            float:left;
+            font-size: 18px;
+            margin:10px;
+            text-align:center;
+            line-height:60px;
+            color:palevioletred;
+        }
+        .btn li{
+            width:20px;
+            height:20px;
+            background-color: lightblue;
+            list-style: none;
+            float:left;
+            font-size:4px;
+            color:cornflowerblue;
+            line-height:20px;
+            margin:5px;
+            text-align: center;
+        }
+        .btn{
+            position:absolute;
+            bottom:  20px;
+            left:110px;
+        }
+        .div1{
+            width:800px;
+            height:60px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="div1">
+        <ul class="div2">
+            <li class="pic">1</li>
+            <li class="pic">2</li>
+            <li class="pic">3</li>
+            <li class="pic">4</li>
+            <li class="pic">5</li>
+            <li class="pic">1</li>
+            <li class="pic">2</li>
+            <li class="pic">3</li>
+            <li class="pic">4</li>
+            <li class="pic">5</li>
+        </ul>
+    </div>
+    <div class="btn">
+        <ul class="btn1">
+            <li>向左</li>
+            <li>向右</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oDiv1=document.getElementsByClassName("div1")[0];
+    var oBtn1=document.getElementsByClassName ("btn")[0];
+    var oBtn=oBtn1.getElementsByClassName ("oBtn1");
+    var step=3;
+
+    function play(step){
+
+            timer1=setInterval(function(){
+                oDiv1.style.left=oDiv1.offsetLeft-step+"px";
+                if(oDiv1.offsetLeft >=-10*80){
+                    oDiv1.style.left=0;
+                }else if(oDiv1.offsetLeft <=0){
+                    oDiv1.style.left=-5*80+20;
+                }
+            },100);
+
+    }
+play(3)
+oBtn[0].onclick=function(){
+        play();
+        step=3;
+}
+</script>
+</body>
+</html>
