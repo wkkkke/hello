@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table{
+        border:0px;border-collapse: collapse;
+        
+    }
+    td{
+        font:bold 12px/17px Ariial;padding:2px;width:100px;
+    }
+    th{
+        font:normal 12px/17px Ariial;text-align:left;padding:4px;border-bottom: 1px solid black;
+    }
+    .active{
+        display:none;
+    }
+    </style>
+</head>
+<body>
+    筛选:<input>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+    
+    <tbody>
+            
+        <tr class="child_head1">
+            <td>张三</td>
+            <td>男</td>
+            <td>上海</td>
+        </tr>
+        <tr class="child_head1">
+            <td>李四</td>
+            <td>男</td>
+            <td>上海</td>
+        </tr>
+      
+        <tr class="child_head2">
+                <td id>小林</td>
+                <td>女</td>
+                <td>北京</td>
+            </tr>
+            <tr class="child_head2">
+                    <td>大佬 </td>
+                    <td>男</td>
+                    <td>上海</td>
+                </tr>
+                
+                
+                <tr class="child_head3">
+                        <td>大华</td>
+                        <td>男</td>
+                        <td>北京</td>
+                    </tr>
+                    <tr class="child_head3">
+                            <td>季华</td>
+                            <td>女</td>
+                            <td>四川</td>
+                        </tr>
+                        </tbody>
+ <script src="jquery-3.3.1.js"></script>
+ <script>
+ $("input").on("keyup",function(){
+   $("tbody tr").hide()
+   $("tbody tr:contains('"+this.value+"')").show()
+ });
+
+
+ </script>                       
+</body>
+</html>
