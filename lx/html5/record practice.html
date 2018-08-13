@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    a{
+        margin:20px;
+    }
+    .div1{
+        background-color: lightblue;
+        height:600px;
+        width:100%;
+    }
+    .div2{
+        background-color:lightpink;
+        height:600px;
+        width:100%;
+    }
+    .div3{
+        background-color:lightseagreen;
+        height:600px;
+        width:100%;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    <a class="blue">blue</a>
+    <a class="pink">pink</a>
+    <a class="green">green</a>
+    </div >
+    <div class="all">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    </div>
+    <!-- $("").offset().top -->
+    <script src="../jquery/jquery-3.3.1.js"></script>
+    <script>
+    // $(".blue").on("click",function(){
+      $(".all div").offset().top
+    // })
+    
+    </script>
+</body>
+</html>

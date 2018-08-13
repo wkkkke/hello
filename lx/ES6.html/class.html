@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+        
+    }
+    Person.prototype.showName=function(){
+        console.log(this.name,this.age);
+    }
+    let person1=new Person("lisi","30");
+    person1.showName();
+
+    function Student(name,age){
+        Person.call(this,name,age);
+    }
+    Student.prototype=new Person();
+
+    let student1=new Student("zhangsan","20");
+    student1.showName();
+    </script>
+</body>
+</html>

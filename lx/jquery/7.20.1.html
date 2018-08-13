@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background:lightskyblue;
+        }
+    </style>
+</head>
+<body>
+  <form action method="post" id="regform">
+<fieldset>
+    <legend class="line">个人基本信息</legend>
+    <div>名称：<input type="text" id="a" value="名称"></div>
+    <div>密码：<input type="password" id="a" value="123"></div>
+    <div>详细信息：<input type="text" id="a" value="xx省xx市xx"></div>
+    <!-- <textarea name="" id="" cols="" rows=""></textarea>/ -->
+</fildset>
+  </form>
+  <script src="jquery-3.3.1.js"></script> 
+  <script>
+      
+      $(":input").on("focus",function(){
+        //   focus.css("background-color","blue")
+          this.value="";
+          $(this).addClass("active")
+      })
+      $("input").on("blur",function(){
+        //   console.log(this.defaultvalue)
+        $(this).removeClass("active").val(this.value==""?this.defaultvalue:this.value)
+      })
+  </script> 
+</body>
+</html>

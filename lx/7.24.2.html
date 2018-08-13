@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0 auto;}
+        .container{max-width:900px;}    
+        .head,.footer{width:100%;height:80px;background-color: grey;text-align: center;line-height:80px;margin:5px auto;}
+        .nav{width:100%;height:80px;background-color: grey;line-height:80px;text-align:center;margin:5px auto;position:relative;}
+        .p1{word-wrap:break-word;width:600px;background-color: lightpink;font-size:15px;height:400px;float:left;}
+        .p2{width:250px;background-color: lightblue;height:400px;float:right;}
+        #allp li{list-style:none;float:left;}
+        .clearfix::after{display:block;content:"";clear:both;}
+        @media(max-width:600px){.container.p1}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">页头</div>
+        <div class="nav">导航</div>
+        <div id="allp"><img class="pic" src="./img/tianmao7.jpg" width="900px" height="400px"></div>
+        <div class="clearfix"><div class="p1">另外,jQuery同样可以解析 CSS 和 用多词（multiple-word） 格式化（愚人码头注：用横杠连接的词,jkfhkjhsjhfkjshfkjshdfkjhdskjfhkjshfksdjfjksfjsfdkjssfksjdhfkshfkds</div>
+             <div class="p2">.css()方法可以非常方便地获取匹配的元素集合中第一个元素的样式属性的计算值，对于某些属性而言，浏览器访问样式属性的方式是不同的，该方法对于取得这些属性是非常方便的(例如，某些属性在标准浏览器下是通过的 </div>
+        </div>
+        <div class="footer">页脚</div>
+</body>
+</html>

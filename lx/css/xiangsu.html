@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="complete 0.5px" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   /* 方法一
+        *{
+            margin:0;
+            padding:0;
+        }
+    div{
+        width:200px;
+        height:200px;
+        border:1px solid black;
+        transform:  scale(0.5);*
+        transform-origin: 0 0;
+        /* 200p的图缩小0.5后，原点改变，此时需设置原点 */
+    /* } */
+    方法二
+   *{
+         margin:0;
+         padding :0;
+    }
+      div{
+          width:100px;
+          height:100px;
+          background:red;
+          margin:1px;
+      }
+      div::after{
+          content:"";
+          display:block;
+          width:200px;
+          height:200px;
+          border:1px solid black;
+          transform:scale(0.5);
+          transform-origin: 0 0;
+          box-sizing:border-box;
+      }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

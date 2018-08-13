@@ -39,6 +39,7 @@
             let bindArgs=Array.from(arguments)
             let allArgs=args.concat(bindArgs)
            _this.apply(obj,allArgs)
+        //  或者  _this.call(obj,...allArgs)
         }
     }
 
