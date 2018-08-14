@@ -44,7 +44,7 @@ export default {
           name:'movie',
           title:'电影',
           id:'101',
-          path:'/movie'
+          path:'/'
         },
         {
           name:'music',
