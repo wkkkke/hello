@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input id="email" type="text" value="请输入邮箱" onblur="check()"><div id="email_prompt"></div>
+        <input type="text" value="请输入网址">
+        <input type="number">
+        <input type="text" id="num" placeholder="测试">
+        <input type="submit"  value="提交">
+    </form>
+    <script>
+//       function  check(){
+//         var email=$("email");
+//   var email_prompt=divId("email_prompt");
+//   email_prompt.innerHTML="";
+//     let reg=/^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;    
+//     let str='1621703096qqcom'
+//     if(reg.test(email)==false){
+//       email_prompt.innerHTML="Email格式不正确，例如web@sohu.com";
+//     return false;
+//       }
+//       return true;
+
+// }
+let num=document.getElementById("num");
+
+num.onkeydown=function(e){
+    let reg=/\d/
+    if(reg.test(e.key)){
+        return true
+    }else{
+        return false;
+    }
+    console.log(reg.test(e.key));
+}
+    </script>
+</body>
+</html>
