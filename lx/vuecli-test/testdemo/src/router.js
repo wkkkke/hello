@@ -5,6 +5,8 @@ import Music from '@/views/music/music.vue'
 import Book from '@/views/book/book.vue'
 import Photo from '@/views/photo/photo.vue'
 import First from '@/views/movie/movie.vue'
+import MusicDetail from '@/views/music/musicdetail.vue'
+import PhotoDetail from '@/views/photo/photodetail.vue'
 
 // import MusicDetail from '@/views/music/musicDetail.vue'
 
@@ -40,11 +42,16 @@ export default new Router({
       name: 'movie',
       component: First
     },
-    // {
-    //   path: '/music',
-    //   name: 'musicDetail',
-    //   component: MusicDetail
-    // },
+    {
+      path: '/music',
+      name: 'musicdetail',
+      component: MusicDetail
+    },
+    {
+      path: '/photo',
+      name: 'photodetail',
+      component: PhotoDetail
+    },
     // {
     //   path: '/about',
     //   name: 'about',

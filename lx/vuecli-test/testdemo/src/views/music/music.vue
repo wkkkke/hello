@@ -15,7 +15,7 @@ export default{
     }
   },
   mounted(){
-    Axios.get('../../public/data/musicdata.json').then(res=>{
+    Axios.get('../../../public/data/musicdata.json').then(res=>{
        let List = res.data.musicData;
       // console.log(res);
       List.forEach(element => {

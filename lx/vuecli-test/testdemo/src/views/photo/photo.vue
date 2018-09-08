@@ -5,7 +5,7 @@
         <img :src="item.src" alt="">
       </li>
     </ul>
-    </div>
+  </div> 
 </template>
 <script>
 
@@ -32,7 +32,7 @@ export default {
         this.dataList = res.data.photoData
       })
       .catch(()=>{
-      
+
       })
     }
   }
