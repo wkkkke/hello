@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import First from'@/views/First.vue'
+import Mine from'@/views/Mine.vue'
+
 
 
 Vue.use(Router)
@@ -10,10 +11,11 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path:'/First',
-      name: 'First',
-      component: First
+      path:'/Mine',
+      name: 'mine',
+      component: Mine
     },
+   
    
     
   ]
