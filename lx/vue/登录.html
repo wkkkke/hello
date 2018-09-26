@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin:0 auto;
+    padding:0;
+    list-style: none;
+}
+body{
+    background-color:rgb(228, 227, 227);
+}
+#app{
+    width:600px;
+    height:400px;
+    margin-top:100px;
+    padding:30px 80px;
+    border: 1px solid rgb(100, 100, 100);
+    box-shadow: 1px 1px grey;
+    background-color: #fff;
+}
+input{
+    width:200px;
+}
+ul{
+   border: 1px solid rgb(100, 100, 100);
+   width:201px;
+   height:250px;
+   margin-left:56px;
+}
+ul li:hover{
+    background-color:grey;
+}
+</style>
+<body>
+    <div id="app">
+       <div>
+           <span>账户名:</span>
+           <input v-model="text" type="text" placeholder="请输入邮箱">
+       </div>
+       <ul v-if="text">
+           <li v-for="email in emails" >{{dealtext}}@{{email}}.com</li>
+       </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                text:'',
+                emails:[
+                    "qq","163","gmail","sohu"
+                ]
+            },
+            computed:{
+                dealtext:function(){
+                    return this.text.slice(0,this.text.indexOf('@'))
+                }
+            }
+        })
+    </script>
+</body>
+</html>
