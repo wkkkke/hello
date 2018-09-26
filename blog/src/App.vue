@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <div id="index" class="page">
+      <navigation></navigation>
+  
       <!-- <router-link to="/"></router-link> | -->
       <!-- <img src="./assets/img/first4.jpeg" width="100%" height="600px"> -->
     
@@ -13,6 +15,16 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import navigation from './components/Navigation.vue'
+export default {
+  components:{
+    navigation
+  }
+}
+</script>
+
 
 <style>
 body,html{

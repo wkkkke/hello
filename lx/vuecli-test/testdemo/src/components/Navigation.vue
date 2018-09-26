@@ -87,7 +87,7 @@ export default {
   }
   header,nav{
     height: 1rem;
-    width: 100%;
+    width: 100%;/*好定位*/
     position: fixed;
     color: #fff;
   }
