@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">L<input type="checkbox" v-model="size.L"></label>
+        <label for="">M<input type="checkbox" v-model="size.M"></label>
+        <label for="">XL<input type="checkbox" v-model="size.XL"></label>
+        <label for="">包邮<input type="checkbox" v-model="size.mail" v-bind:true-value="free" v-bind:false-value="notfree"></label>
+        <P>{{size|json}}</P>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+    var app=new Vue({
+        el:"div",
+        data:{
+            free:'isFree',
+            size:{
+                L:'',
+                M:'',
+                XL:'',
+                mail:''
+            }
+        },
+        computed:{
+            free:function(){
+                return 'is free'
+            }
+        }
+    })
+    </script>
+</body>
+</html>
