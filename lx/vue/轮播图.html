@@ -12,8 +12,8 @@
     }
     .box{
       border: 1px solid #000;
-      width: 490px;
-      height: 170px;
+      width: 170px;
+      height: 350px;
       margin:200px auto;
       position: relative;
     }
@@ -49,7 +49,7 @@
     <div class="box" @mouseover="stop" @mouseout="play">
       <ul class="img-bar">
         <li v-show="index == nowIndex" v-for="(item,index) in imgList" :key="index+'il'">
-          <img :src='item' alt="" width="490px" height="170px">
+          <img :src='item' alt="" width="170px" height="350px">
         </li>
       </ul>
       <ul class="btn-bar">
@@ -65,11 +65,11 @@
         nowIndex:0,
         timer:null,
         imgList:[
-          '../img/div4pic1.jpg',
-          '../img/div4pic2.jpg',
-          '../img/div4pic3.jpg',
-          '../img/div4pic4.jpg',
-          '../img/div4pic5.jpg',
+          '../img/a.jpg',
+          '../img/b.jpg',
+          '../img/c.jpg',
+          '../img/d.jpg',
+          '../img/a.jpg',
         ]
       },
       mounted() {
