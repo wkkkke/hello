@@ -7,21 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <div id="box"></div>
-    <script>
-    var box=document.getElementById("box");
-    box.innerHTML="hello"
-    </script> -->
-    <div id="app">
-     {{msg}}
+    <div class="main">
+        <input type="text" v-model="text">
+        <ul>
+            <li v-for="item in list">
+                {{item.title}}
+            </li>
+        </ul>
     </div>
     <script src="./vue.js"></script>
     <script>
-    let vueTest=new Vue({
-        el:"#app",
+    new Vue({
+        el:".main",
         data:{
-            msg:"hello world"
-        }
+            list:[
+                  {title:hi},
+                  {title:by}        
+            ]
+        },
+        
     })
     
     </script>
