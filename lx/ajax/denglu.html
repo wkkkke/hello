@@ -36,6 +36,7 @@
         if(ajax.status==200){
              //获取响应
              var result=ajax.responseText;
+             console.log(result)
              //获取元素对象
              var show =document.getElementById("show");
              show.innerHTML=result;
@@ -50,8 +51,8 @@
              }
          }
         //发送请求
-        ajax.open("get","",true);//open("get/post","请求地址","(async:)true/false")
-        ajax.send(null);//请求的东西拼在get后面
+        ajax.open("get","https://api.douban.com/v2/movie/search?q=神秘巨星&start=0&count=10",true);//open("get/post","请求地址","(async:)true/false")
+        ajax.send();//请求的东西拼在get后面
         }
        
         
