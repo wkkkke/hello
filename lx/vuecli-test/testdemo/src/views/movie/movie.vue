@@ -38,7 +38,7 @@ export default {
   methods:{
     getData(){
       this.isFinish = false;
-      axios.get(API_PROXY+'https://api.douban.com/v2/movie/in_theaters?start='+this.dataList.length+'&count=10')
+      axios.get(API_PROXY+'https://api..com/v2/movie/in_theaters?start='+this.dataList.length+'&count=10')
       .then((response) => {
         this.dataList = this.dataList.concat(response.data.subjects)
         this.isFinish = true;
