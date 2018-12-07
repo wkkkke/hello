@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+</head>
+<body>
+  <h1>注册</h1>
+  <label>
+    <input type="checkbox" id="legal">我已阅读相关说明并遵守相关法律</label>
+  <form>
+    <div id="register">
+      用户名:
+      <input type="text" name="username">
+      <ul id="ul_address">
+      </ul>
+      地址：
+      <input name="address">
+      <button type="button" id="button_address">添加地址</button>
+      <br>
+      <br> 未来意向
+      <label>
+        <input type="radio" name="purpose">Java工程师</label>
+      <label>
+        <input type="radio" name="purpose">测试工程师</label>
+      <label>
+        <input type="radio" name="purpose">前端工程师</label>
+      <br>
+      <br> 请从以下课程中选择2项最喜欢的课程
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" name="courses">Web开发技术</label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="courses">软件项目管理</label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="courses">数据库原理</label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="courses">系统分析与设计</label>
+        </li>
+      </ul>
+    </div>
+    <button type="submit">提交</button>
+  </form>
+  <script src="../jquery/jquery-3.3.1.js"></script>
+  <script>
+        let registerForm=$("#register:input").prop("disabled",true);
+        let submitButton = $("button:submit").prop("disabled", true);
+
+        $("#legal").click(function(){
+        if($(this).prop("checked")){
+            registerForm.prop("disabled",false);
+        }else{
+            registerForm.prop("disabled",true);
+             }
+        })
+
+        let usernameValid=false;
+        $("input[name=username]").change(function(){
+            if($(this).val().trim().length<=6){
+                alert("用户名长度必须大于六");
+                usernameValid=false;
+            }else{
+                usernameValid=true;
+            }
+        })
+
+        $("#button_address").click(() => {
+        let input = $("input[name=address]");
+        let item = $("<li>" + input.val() + "</li>");
+        input.val("");
+        item.css("display", "none");
+        $("#ul_address").append(item);
+        item.fadeIn(1000);
+      });
+
+
+      $("input[name=purpose]").click(function () {
+        // 为每个radio自定义一个属性，用于判断是否为第二次点击的标识
+        let secClicked = $(this).prop("data-value");
+        // 如果标识为true，则为第二次点击
+        if (secClicked) {
+          // 置为未选中状态
+          $(this).prop("checked", false);
+          // 置标识为false
+          $(this).prop("data-value", false);
+        } else {
+          // 不是第二次点击，置标识为true
+          $(this).prop("data-value", true);
+          // 将其他radio标识置为false，为什么？
+          $("input[name=purpose]:not(:checked)").prop("data-value", false);
+        }
+      })
+
+      /* checkbox checked数量状态控制 */
+      let amount = 2;
+      $("input[name=courses]").click(function () {
+        // checkbox name=courses的，状态为选中状态的，全部对象
+        let checked = $("input[name=courses]:checked");
+        // 当前未选中项
+        let unChecked = $("input[name=courses]").not(":checked");
+        if (checked.length >= amount) {
+          // 所有unChecked置为disabled
+          unChecked.prop("disabled", true);
+          // 符合规则后，修改标识
+          coursesValid = true;
+        } else {
+          unChecked.prop("disabled", false);
+          // 不符合规则
+          coursesValid = false;
+        }
+      });
+
+      /* 监听指定input的值改变事件，当值符合输入规则时，提交button为abled状态 */
+      $("input[name=username], input[name=courses]").change(() => {
+        if (userNameValid && coursesValid) {
+          $("button:submit").prop("disabled", false);
+        } else {
+          $("button:submit").prop("disabled", true);
+        }
+      })
+    })
+  
+  </script>
+</body>
+</html>
+

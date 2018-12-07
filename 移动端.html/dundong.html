@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <ul class="">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+    <script>
+        var scrollBar=$(".content")[0];
+    $("#next").on("click",function(){
+        run("left")
+    })
+    $("#prev").on("click",function(){
+        run("right")
+    })
+    function run(dire){
+        var scrollLeft=dire=="left"?scrollBar.scrollLeft+300:scrollBar.scrollLeft
+        $(scrollBar).animate({
+            scrollLeft:scrollLeft
+        },500,function(){
+            showArrow();
+
+        })
+    }
+    function showArrow(){
+        $("#prev").add("#next").show()
+        if(scrollBar.scrollLeft<=0){
+            $("#prev").hide();
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- indexOf用于检索字符串 返回的是数字 代表第几个字母 -->
+    <!-- includes返回true false -->
+    <script>
+    var str="hello world";
+    console.log(str.indexOf("ld"));
+    console.log(str.includes("fellow"));
+    console.log(str.startsWith("world"));//返回true false 判断是不是以这个为开始
+    console.log(str.padStart(15,"xy"))//输出xyxyhello world,空格也占一个字符
+    console.log(str.repeat(2))//输出hello worldhello world
+    </script>
+</body>
+</html>

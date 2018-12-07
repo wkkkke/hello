@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #can{
+        background:lightseagreen;
+    }
+    </style>
+</head>
+<body>
+                <!--     Line width : <select id="selWidth">
+                        <option value="1">1</option>
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="9" selected="selected">9</option>
+                        <option value="11">11</option>
+                    </select>
+                    Color : <select id="selColor">
+                        <option value="black">black</option>
+                        <option value="blue" selected="selected">blue</option>
+                        <option value="red">red</option>
+                        <option value="green">green</option>
+                        <option value="yellow">yellow</option>
+                        <option value="gray">gray</option>
+                    </select> -->
+                                               
+    <canvas id="can" width="400px" height="400px"></canvas>
+    <script>
+    var oCan=document.getElementById("can");
+    var can=oCan.getContext("2d");
+    // var isDown;
+    // var lastX;
+    // var lastY;
+    // can.beginPath();
+    // can.moveTo(100,150);
+    // can.lineTo(450,50);
+    // can.strokeStyle="red";
+    // can.stroke();
+    oCan.onmousedown=function(e){
+        can.beginPath();
+        can.moveTo(e.clientX,e.clientY);
+        oCan.onmousemove=function(e){
+            can.beginPath();
+            can.lineTo(e.clientX,e.clientY)
+            can.stroke();
+        }
+        oCan.mouseup=function(e){
+            oCan.mousemouse=null;
+        }
+    }
+
+    
+
+    // function Draw(x, y, isDown) {
+    // if (isDown) {
+    //     can.beginPath();
+    //     can.strokeStyle = $('#selColor').val();
+    //     can.lineWidth = $('#selWidth').val();
+    //     can.lineJoin = "round";
+    //     can.moveTo(lastX, lastY);
+    //     can.lineTo(x, y);
+    //     can.closePath();
+    //     can.stroke();
+    // }
+    
+    // lastX = x; lastY = y;}
+    </script>
+</body>
+</html>

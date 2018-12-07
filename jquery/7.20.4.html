@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{ border:0;border-collapse:collapse;}
+        td{ font:normal 12px/17px Arial;padding:2px;width:100px;}
+        th{ font:bold 12px/17px Arial;text-align:left;padding:4px;border-bottom:1px solid #333;}
+       .parent{
+           background: yellow;
+           width:200px;
+       }
+       .selected{
+           background: orchid;
+       }
+       .is-show{
+       display:none;
+       }
+      </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+    
+    <tbody>
+            <tr id="head1" class="parent"><td colspan="3">前台设计组</td>
+                <!-- <td></td>
+                <td></td> -->
+            </tr>
+        <tr class="child_head1">
+            <td>张三</td>
+            <td>男</td>
+            <td>上海</td>
+        </tr>
+        
+        <tr class="child_head1">
+                <td>李四</td>
+                <td>男</td>
+                <td>上海</td>
+            </tr>
+            <tr id="head2" class="parent"><td colspan="3">前台开发组</td>
+                <!-- <td></td>
+                <td></td> -->
+            </tr>
+            <tr class="child_head2">
+                    <td id>小林</td>
+                    <td>女</td>
+                    <td>北京</td>
+                </tr>
+                <tr class="child_head2">
+                        <td>老卡</td>
+                        <td>男</td>
+                        <td>哈尔滨</td>
+                    </tr>
+                    <tr id="head3" class="parent"><td colspan="3">后台开发组</td>
+                        <!-- <td></td>
+                        <td></td> -->
+                    </tr>
+                <tr class="child_head3">
+                        <td>大华</td>
+                        <td>男</td>
+                        <td>山东</td>
+                    </tr>
+                    <tr class="child_head3">
+                            <td>季华</td>
+                            <td>女</td>
+                            <td>四川</td>
+                        </tr>
+    </tbody>
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(".parent").on("click",function(){
+           
+        //    $(this).toggleClass("selected").nextUntil(".parent").toggleClass("is-show");
+        $(this).toggleClass("selected").siblings(".child_"+this.id).toggleClass("is-show");
+         
+    })
+        
+    </script>
+</body>
+</html>

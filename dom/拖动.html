@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    div{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background:red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var oDiv = document.querySelector(".box");
+    oDiv.onmousedown = function(e){
+      var topDistance = e.clientY - this.offsetTop;
+      var leftDistance = e.clientX - this.offsetLeft;
+      var windowWidth = document.documentElement.clientWidth;
+      var windowHeight = document.documentElement.clientHeight;
+      
+      document.onmousemove = function(e){
+        var moveLeft = e.clientX - leftDistance;
+        var moveTop = e.clientY - topDistance;
+        if(moveLeft<=0){
+          moveLeft = 0;
+        }
+        if(moveTop<=0){
+          moveTop = 0;
+        }
+        oDiv.style.left = moveLeft+"px";
+        oDiv.style.top = moveTop+"px";
+      }
+    }
+    document.onmouseup = function(){
+      document.onmousemove = null;
+    }
+  </script>
+</body>
+</html>

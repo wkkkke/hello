@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+header {
+  border: 1px solid red;
+}
+
+nav {
+  padding: 5px;
+  border: 1px solid red;
+  margin: 5px 10px;
+}
+/* 基于后代/子选择器，减少类的数量，降低与HTML的耦合 */
+nav>ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+nav a {
+  display: block; /* 变为block级，填充高宽 */
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav .active {
+  background-color: #4CAF50;
+}
+/* 上导航鼠标悬停样式 */
+nav a:hover {
+  background-color: #111;
+}
+/* 导航中右对齐内容样式，li元素样式 */
+nav .right {
+  margin-left: auto;
+}
+
+/* -------------------主区域样式，包含左边侧栏与主内容区域--------------------------  */
+main {
+  margin: 5px 0px;
+  border: 1px solid red;
+}
+
+/*  ------------左边侧栏--------------  */
+aside {
+  padding: 5px;
+  display: inline-block;
+  vertical-align: top;
+  width: 230px; 
+  border: 1px solid red;
+  margin: 5px 10px;
+}
+
+/* 一二级ul样式 */
+aside ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+/* 一二级超链接导航样式 */
+aside a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* 一级标题 */
+li.submenu>a {
+  background-color: #333;
+  font-weight: bold;
+  color: #1d835a;
+}
+
+aside a:hover {
+  font-weight: bold;
+  background-color: #555;
+  color: white;
+}
+
+/*------------------------主内容区域-----------------------  */
+/* 可通过%设置宽度，默认宽度为内容宽度 */
+article {
+  margin: 5px 10px;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid red;
+  
+}
+
+/*-------------------------footer------------------------------- */
+footer {
+  background-color: #333;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  padding: 5px;
+  border: 1px solid red;
+  margin: 5px 10px;
+}
+</style>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li class="right"><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+    
+      </header>
+      <main>
+      <aside>
+        <ul>
+          <li class="submenu"><a href="#">云技术管理</a>
+            <ul>
+              <li><a href="#">云服务器</a></li>
+              <li><a href="#">云数据库</a></li>
+              <li><a href="#">负载均衡</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li class="submenu"><a href="#">安全管理</a>
+            <ul>
+              <li><a href="#">云盾控制台</a></li>
+              <li><a href="#">DDoS高防IP</a></li>
+              <li><a href="#">Web应用防火墙</a></li>
+              <li><a href="#">CA证书服务</a></li>
+            </ul></li>
+        </ul>
+      </aside>
+      <article>
+        <h1>注册</h1>
+      </article>
+      </main>
+      <footer>
+        东北林业大学<br /> 软件工程专业 2018&copy;
+      </footer>
+    </body>
+    </html>
+    
+    
+    
+    
+    
+    
+</body>
+</html>

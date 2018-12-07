@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <input type="text" v-model="text">
+        <ul>
+            <li v-for="item in list">
+                {{item.title}}
+            </li>
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+    new Vue({
+        el:".main",
+        data:{
+            list:[
+                  {title:hi},
+                  {title:by}        
+            ]
+        },
+        
+    })
+    
+    </script>
+</body>
+</html>

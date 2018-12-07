@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin:0 ;}
+    
+    .head,.footer{background-color: lightblue;text-align:center;}
+    .left{background-color:lightpink;width:100px;height:100px;}
+    .middle{background-color: lightgreen;height:100px; width:1080px;}
+    .right{background-color: lightgoldenrodyellow;width:100px;right:0px;height:100px;}
+    #box div{float:left;
+    min-width:700px;
+    }
+    .clearfix::after{display:block;content:"";clear:both;}
+    /* @media(max-width:"2261.33px")and(min-width:"109.73px"){.middle{background-color: blanchedalmond;}} */
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="head">header</div>
+    <div id="box" class="clearfix">
+        <div class="left">left</div>
+        <div class="middle">middle</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+    </div>
+</body>
+</html>

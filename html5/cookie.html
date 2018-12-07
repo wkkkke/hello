@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var timer=new Date();
+        // var timer1=timer.setDate(timer.getDate+1);
+    // document.cookie="name=xiaoming;expires"+timer.toUTCString();
+    // console.log(document.cookie);
+
+    function setCookie(key,value,expires){
+        var timer=new Date();
+        var timer1=timer.setDate(timer.getDate+expires);
+    console.log(document.cookie);
+    document.cookie=key+ "="+ value+";expires="+timer.toUTCString();
+    }
+    function getCookie(key){
+ var cookieStr=document.cookie;
+ var thisArr=cookieStr.split(";");
+ for(var i=0;i<thisArr.length;i++)
+    
+  {
+ var cookie=thisArr.split("=");
+               cookie[i].trim()
+    } 
+    }
+  
+    
+    function delCookie(key){
+        var timer=new Date();
+        var timer1=timer.setDate(timer.getDate-1);
+    console.log(document.cookie);
+    document.cookie=key+ "="+ value+";expires="+timer.toUTCString();
+    }
+
+    var str="a=b=c";
+    var arr2=[];
+    setCookie("school","linda","1")
+
+    </script>
+</body>
+</html>

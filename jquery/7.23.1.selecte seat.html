@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin:0;padding:0;}
+    body{background-color: black;}
+    .container{margin:0 auto;width:600px;background-color:black;}
+    .head{width:600px;height:80px;font-size:30px;line-height:80px;background-color: #fff;}
+    .ud-head{width:600px;height:60px;background-color:black;border-bottom:1px solid grey;}
+    .ud-head li{list-style:none;float:left;width:35px;height:35px;margin-top:10px;margin-left:10px;}
+    .w{color:#fff;width:35px;height:35px;line-height:35px;margin-left: 30px;}
+    .u1{background-color:#fff;margin-left: 30px;}.u2{background-color:red;}.u3{background-color:blue;}
+    .seat1{width:250px;height:1000px;top:15px;margin-right:100px;position:absolute;margin-left:30px;}
+    .seat1 ul{width:250px;position:relative;top:40px;}
+    .seat1 li{width:33px;margin:10px 5px;background-color:white;height:27px;list-style: none;float:left;}
+    .seat2{width:250px;height:1000px;margin-top:15px;position:absolute;right: 30px;}
+    .seat2 ul{width:250px;position:relative;margin-top:40px;}
+    .seat2 li{width:33px;margin:10px 5px;background-color:white;height:27px;list-style: none;float:right;}
+    .seat{position:relative;height:470px;border-bottom:1px solid grey;}
+    .head2{width:600px;height:80px;background-color: black;}
+    .h2-l{height:80px;line-height:80px;font-size:20px;float:left;color:white;margin-left:10px;}
+    .h2-r{height:80px;line-height:80px;font-size:20px;float:right;color:white;margin-right:10px;}
+    .head3{width:600px;height:80px;background-color: black;}
+    .head3 li{border:0.5px solid goldenrod;list-style: none;float:left;width:100px;height:40px;margin:10px 24px;color:goldenrod;line-height:40px;text-align:center;font-size:18px;}
+    .head4{position:fixed;width:600px;height:100px;background-color: darkgray;font-size:30px;color:#ddd;height:100px;line-height:100px;}
+    .s1{font-size:30px;color:crimson;} .s2{font-size:15px;color:#ddd;margin-left:30px;}
+    .btn{margin-right:0px;float:right;width:200px;height:100px;background-color: goldenrod;font-size:30px;line-height:100px;border:none;}
+    /* .box2{position:fixed;} */
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div>
+         <div class="head"></div>
+         <ul class="ud-head"><li class="u1"></li><li class="w">可选</li><li class="u2"></li><li class="w">已选</li><li class="u3"></li><li class="w">已售</li></ul>
+     </div>
+     <div class="seat">
+        <div class="seat1"><ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul></div>
+        <div class="seat2"><ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul> <ul><li></li><li></li><li></li><li></li><li></li></ul><ul><li></li><li></li><li></li><li></li><li></li></ul></div>
+     </div>
+     <div>
+        <div class="head2"><div class="h2-l">已选座位</div><div class="h2-r">最多可选5个座位</div></div>
+        <div class="head3"><ul><li>9排9座</li><li>9排8座</li><li>9排9座</li><li>9排9座</li></ul></div>
+        <div class="head4">合计：<span class="s1">￥396</span><span class="s2">￥99*4</span><button class="btn">确认选座</button></div>
+    </div>
+    </div>
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+           var now=new Date();
+            var m=now.getMonth()+1;
+            var d=now.getDate();
+            var t=now.getHours();
+            var s=now.getMinutes();
+            var n=document.getElementsByClassName("head")[0];
+           n.innerHTML='今天'+m+'月'+d+'日'+t+':'+s;
+    //选中变红
+     var a=  $(".seat li").on("click",function(){
+           $(this).css("background-color","red")
+       })
+
+    // 点击确认变蓝
+   $(".btn").on("click",function(){
+       $(a).css("background-color","blue")
+       console.log($(this).parent("ul").index())
+   })
+
+    //显示已选座位
+    
+    </script>
+</body>
+</html>

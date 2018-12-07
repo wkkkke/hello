@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table{
+        border:1px solid black;border-collapse: collapse;width:387px;
+    }
+    td{
+        border-bottom:1px solid black;padding:2px;text-align: left;
+        border-right:1px solid black;
+    }
+    th{
+        padding:4px;border-bottom: 2px solid black;
+        border-right:1px solid black;
+    }
+    .td1{
+        width:100px;
+    }
+   .active{
+       display:none;
+   }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><th colspan="2">鼠标单击表格就可以编辑</th></tr>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr><td  class="bb1">1</td><td id="aa" class="td21">张三
+                <!-- <input type="text" class="cc" id="td-td21"> -->
+            </td></tr>
+            <tr><td  class="bb2">2</td><td id="aa" class="td21">李四
+                <!-- <input  type="text" class="cc" id="td-td22"> -->
+            </td></tr>
+            <tr><td  class="bb3">3</td><td  id="aa" class="td21">王五
+                <!-- <input type="text" class="cc" id="td-td23"> -->
+            </td></tr>
+            <tr><td  class="bb4">4</td><td id="aa" class="td21">赵柳
+                <!-- <input type="text" class="cc" id="td-td24"> -->
+            </td></tr>
+        </tbody>
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+    $("tbody tr:odd").css("background","lightblue")
+    $("thead tr:odd").css("background","pink")
+    // $(".cc").hide()
+    // $("#aa").on("click",function(){
+    //     $("#td-"+this.class).show()
+    // })
+
+    // way1
+    $("td21").on("click",function(){
+        if((this).children("input").length==0){
+            var inp=$("<input type='text'/>")
+            inp.val(this.innerText)
+            $(this).empty
+            $(this).append(inp)
+           inp.focus()
+
+        }
+        $("td21").on("blur","input",function(){
+            var father=$(this).parent("td")
+            father.text($(this).val())
+         $(this).remove()
+        })
+    })
+
+
+    </script>
+</body>
+</html>

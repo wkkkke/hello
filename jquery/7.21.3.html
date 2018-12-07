@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width:100px;
+        height:100px;
+        background:red;
+    }
+    </style>
+</head>
+<body>
+    <button class="fadein">fadein</button>
+    <button class="fadeout">fadeout</button>
+    <button class=animate>animate</button>
+    <button class="slideup">slideup</button>
+    <button class="slidedown">slidedown</button>
+    <div class="box"></div>
+    <script>
+    $(".fadein").on("click",function(){
+        $(".box").fadeIn();
+    })
+    $(".fadeout").on("click",function(){
+        $(".box").fadeOut();
+
+    })
+    $(".animate").on("click",function(){
+        $(".box").animate({
+            width:400,
+            height:400
+        },1000,"swing",function(){
+            console.log("done")
+        })
+    })
+    $(".fadein").on("click",function(){
+        $(".box").fadeIn();
+    })
+    </script>
+    <script src="jquery-3.3.1.js"></script>
+</body>
+</html>
