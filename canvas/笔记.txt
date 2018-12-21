@@ -1,0 +1,7 @@
+canvas
+let gd=oC.getContext('2d');
+
+路径
+
+
+非路径
