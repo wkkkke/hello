@@ -1,7 +1,16 @@
-canvas
-let gd=oC.getContext('2d');
+canvas--画布
+1.什么都能画
+2.性能特别高--大型动画，游戏
+let gd=oC.getContext('2d');  图形上下文--接口
 
-路径
-
-
+路径--只是范围，没图
 非路径
+
+1.路径操作
+moveTo lineTo
+2.画线、填充
+画线：stroke(strokeStyle改变画线的颜色之类的)
+填充：fill(fillStyle改变填充颜色之类的)
+
+beginPath():清除之前的路径
+closePath():闭合

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+    body{
+        background-color: black;
+        text-align:center;
+    }
+    #c1{
+        background-color: #fff;
+        
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        let oC=document.getElementById('c1');
+        let gd=oC.getContext('2d');//图形上下文--绘图用的接口
+
+        gd.moveTo(100,100);
+        gd.lineTo(300,200);
+       
+        gd.strokeStyle='red';
+        gd.stroke();
+       
+       gd.beginPath();//清除之前所有的路径（如果不清除，前面这个线的颜色就会变成奇怪的绿加红的混合颜色）
+
+       gd.moveTo(100,200);
+       gd.lineTo(300,300);
+
+       gd.strokeStyle='green';
+       gd.stroke();
+    }
+    </script>
+</head>
+<body>
+    <canvas id="c1" width="800px" height="600px">
+        hello
+    </canvas>
+</body>
+</html>
