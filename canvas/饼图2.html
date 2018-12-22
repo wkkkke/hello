@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     body{
+        background-color: black;
+        text-align:center;
+    }
+    #c1{
+        background-color: #fff;
+        
+    }
+    </style>
+    <script>
+        //把角度换算成弧度
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        //把弧度换算成角度
+        function a2d(n){
+            return n*180/Math.PI;
+        }
+    window.onload=function(){
+        let oC=document.getElementById('c1');
+        let gd=oC.getContext('2d');
+
+        let cx=400,cy=300,r=150;
+        let startAng=30,endAng=70;
+
+        //line1
+        gd.moveTo(cx,cy);
+        let x=cx+Math.sin(d2a(startAng))*r;
+        let y=cy-Math.cos(d2a(startAng))*r;
+        gd.lineTo(x,y);
+
+        //line2
+        //gd.arc(cx,cy,r,startAng,endAng,是否逆时针)
+        gd.arc(cx,cy,r,d2a(startAng-90),d2a(endAng-90),false);
+
+        //line3
+        gd.closePath();
+
+        gd.stroke();
+        gd.fill();
+    }
+    </script>
+</head>
+<body>
+    <canvas id="c1" width="800" height="600">hello</canvas>
+</body>
+</html>

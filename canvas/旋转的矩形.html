@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: black;
+        text-align: center;
+    }
+    #c1{
+        background-color: #fff;
+    }
+    </style>
+    <script>
+        //把角度换算成弧度
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        //把弧度换算成角度
+        function a2d(n){
+            return n*180/Math.PI;
+        }
+    window.onload=function(){
+        let oC=document.getElementById('c1');
+        let gd=oC.getContext('2d');
+        let rotate=0;
+
+        gd.strokeRect(100,100,300,200);
+
+        setInterval(function(){
+            gd.clearRect(0,0,oC.width,oC.height);
+
+            rotate++;
+            //save--保存canvas状态（颜色，线宽，旋转。。不包括图形本身）
+            gd.save();
+
+            gd.translate(250,200);
+            gd.rotate(d2a(rotate));
+
+            gd.strokeRect(-150,-100,300,200);
+
+            //恢复
+            gd.restore();
+            //倒着执行的（计算机矩阵？右乘？），先rotate再translate
+        },16)
+       
+        
+    }
+    </script>
+</head>
+<body>
+ <canvas id="c1" width="800" height="600"> </canvas>   
+</body>
+</html>
